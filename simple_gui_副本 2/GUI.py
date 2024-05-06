@@ -49,8 +49,8 @@ class GUI:
         self.login.title("Login or Register")
         self.login.resizable(width = False, 
                              height = False)
-        self.login.configure(width = 800,
-                             height = 600)
+        self.login.configure(width = 750,
+                             height = 550)
         # create a Label
         self.pls = Label(self.login, 
                        text = "Please log in to continue",
