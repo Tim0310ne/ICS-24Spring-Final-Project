@@ -53,29 +53,29 @@ class GUI:
                              height = 550)
         # create a Label
         self.pls = Label(self.login, 
-                       text = "Please log in to continue",
+                       text = "Log in to continue",
                        justify = CENTER, 
-                       font = "Helvetica 20 bold")
+                       font = "Chalkboard 18 bold")
           
-        self.pls.place(relheight = 0.15,
+        self.pls.place(relheight = 0.17,
                        relx = 0.2, 
                        rely = 0.07)
         # create a Label
         self.labelName = Label(self.login,
-                               text = "Name: ",
-                               font = "Helvetica 20")
+                               text = "UserName: ",
+                               font = "Chalkboard 18 bold")
           
-        self.labelName.place(relheight = 0.2,
-                             relx = 0.1, 
+        self.labelName.place(relheight = 0.22,
+                             relx = 0.11, 
                              rely = 0.25, anchor='center')
           
         # create a entry box for 
         # tyoing the message
         self.entryName = Entry(self.login, 
-                             font = "Helvetica 20")
+                             font = "Chalkboard 18 bold")
           
-        self.entryName.place(relwidth = 0.4, 
-                             relheight = 0.10,
+        self.entryName.place(relwidth = 0.42, 
+                             relheight = 0.13,
                              relx = 0.2,
                              rely = 0.2)
           
@@ -85,18 +85,18 @@ class GUI:
         # create a Label
         self.labelPw = Label(self.login,
                                text = "Password: ",
-                               font = "Helvetica 20")
+                               font = "Chalkboard 18 bold")
           
-        self.labelPw.place(relheight = 0.2,
-                             relx = 0.1, 
+        self.labelPw.place(relheight = 0.22,
+                             relx = 0.12, 
                              rely = 0.4, anchor='center')
           
         # create a entry box for 
         # tyoing the message
         self.entryPw = Entry(self.login, 
-                             font = "Helvetica 20")
+                             font = "Chalkboard 18 bold")
           
-        self.entryPw.place(relwidth = 0.5, 
+        self.entryPw.place(relwidth = 0.49, 
                              relheight = 0.20,
                              relx = 0.22,
                              rely = 0.37)
