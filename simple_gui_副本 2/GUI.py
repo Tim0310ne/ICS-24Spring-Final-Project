@@ -208,10 +208,10 @@ class GUI:
         # along with action
         self.reset_go = Button(self.reset_password,
                          text = "Reset", 
-                         font = "Helvetica 14 bold", 
+                         font = "Chalkboard 15 bold", 
                          command = lambda: self.reset_goAhead(f"{self.entryResetName.get()},{self.entry_old_Pw.get()},{self.entry_new_Pw.get()}"))
           
-        self.reset_go.place(relx = 0.4,
+        self.reset_go.place(relx = 0.38,
                       rely = 0.7)
         
   
@@ -230,8 +230,8 @@ class GUI:
                 self.sm.set_myname(name_and_pw.split(",")[0])
                 self.layout(name_and_pw.split(",")[0])
                 self.textCons.config(state = NORMAL)
-                # self.textCons.insert(END, "hello" +"\n\n")   
-                self.textCons.insert(END, menu +"\n\n")      
+                # self.textCons.insert(END, "Hello" +"\n\n")   
+                self.textCons.insert(END, Menu +"\n\n")      
                 self.textCons.config(state = DISABLED)
                 self.textCons.see(END)
 
@@ -242,10 +242,10 @@ class GUI:
                 #     self.proc()
         # the thread to receive messages
             elif response["status"] == 'wrong_pw':
-                messagebox.showwarning("Try again","Wrong Password")
+                messagebox.showwarning("Try again","Incorrect Password")
                 # self.login.destroy()
             elif response["status"] == 'duplicate':
-                messagebox.showwarning("Try again","The account has already signed in.")
+                messagebox.showwarning("Try again", "The account is already signed in.")
             
     def reset_goAhead(self,name_and_pw):
         if len(name_and_pw) > 0:
@@ -255,7 +255,7 @@ class GUI:
             if response["re_status"] == 'ok2reset':
                 self.login.destroy()
                 self.reset_password.destroy()
-                # messagebox.showinfo("Successfully reset your password", "Start Chatting!")
+                # messagebox.showinfo("Successfully reset your password", "Start Your Chat!")
                 self.sm.set_state(S_LOGGEDIN)
                 self.sm.set_myname(name_and_pw.split(",")[0])
                 self.layout(name_and_pw.split(",")[0])
@@ -271,7 +271,7 @@ class GUI:
                 #     self.proc()
         # the thread to receive messages
             elif response["re_status"] == 'wrong_pw':
-                messagebox.showinfo("Try again","Password not correct.")
+                messagebox.showinfo("Try again","Password is not correct.")
             elif response["re_status"] == 'new_user':
                 messagebox.showinfo("Try again","You need to register first! ")
             elif response["re_status"] == 'duplicate':
