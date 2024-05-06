@@ -7,14 +7,14 @@ Created on Fri Apr 30 13:36:58 2021
 """
 
 # import all the required  modules
-import threading
 import select
+import threading
 from tkinter import *
-from tkinter import font
+from tkinter import messagebox
 from tkinter import ttk
+from tkinter import font
 from chat_utils import *
 import json
-from tkinter import messagebox
 import pygame
 import sys
 import time
@@ -29,13 +29,13 @@ class GUI:
         self.Window.withdraw()
         self.send = send
         self.recv = recv
-        self.sm = sm
         self.socket = s
+        self.sm = sm
         self.my_msg = ""
         self.system_msg = ""
         self.gamer = 2
-        self.isgaming = False
         self.imready = False
+        self.isgaming = False
         self.peer_ready = False
         self.x1 = 0
         self.x2 = 0
@@ -96,10 +96,10 @@ class GUI:
         self.entryPw = Entry(self.login, 
                              font = "Helvetica 20")
           
-        self.entryPw.place(relwidth = 0.4, 
-                             relheight = 0.10,
-                             relx = 0.2,
-                             rely = 0.35)
+        self.entryPw.place(relwidth = 0.5, 
+                             relheight = 0.20,
+                             relx = 0.22,
+                             rely = 0.37)
           
         # set the focus of the curser
         self.entryPw.focus()
@@ -107,36 +107,36 @@ class GUI:
         # create a Continue Button 
         # along with action
         self.go = Button(self.login,
-                         text = "CONTINUE", 
-                         font = "Helvetica 14 bold", 
+                         text = "CLICK2CONTINUE", 
+                         font = "Chalkboard 15 bold", 
                          command = lambda: self.goAhead(self.entryName.get()+ "," +self.entryPw.get()))
           
-        self.go.place(relx = 0.4,
-                      rely = 0.55)
+        self.go.place(relx = 0.42,
+                      rely = 0.54)
         
         self.reset_password = Button(self.login,
-                         text = "Reset password", 
-                         font = "Helvetica 14 bold", 
+                         text = "Reset the password", 
+                         font = "Chalkboard 14 bold", 
                          command = self.reset_password)
           
-        self.reset_password.place(relx = 0.4,
-                      rely = 0.7)
+        self.reset_password.place(relx = 0.42,
+                      rely = 0.6)
         
         self.Window.mainloop()
 
     def reset_password(self):
         self.reset_password = Toplevel()
-        self.reset_password.title("Reset your password.")
+        self.reset_password.title("Reset the password.")
         self.reset_password.resizable(width = False, height = False)
         self.reset_password.configure(width = 800,
-                             height = 600)
+                             height = 650)
         # create a Label
         self.please = Label(self.reset_password, 
-                       text = "Please reset your password",
+                       text = "Please reset the password",
                        justify = CENTER, 
-                       font = "Helvetica 20 bold")
+                       font = "Chalkboard 18 bold")
           
-        self.please.place(relheight = 0.15,
+        self.please.place(relheight = 0.17,
                        relx = 0.3, 
                        rely = 0.07)
         # create a Label
