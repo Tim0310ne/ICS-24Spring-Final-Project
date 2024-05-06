@@ -427,17 +427,17 @@ class GUI:
         game_started = False
 
         # Number countdown animation variables
-        countdown_start = 5
+        countdown_start = 10
         countdown_timer = pygame.time.get_ticks()
         countdown_text = str(countdown_start)
 
         # Initialize ball variables
         ball1_trace = []
         ball2_trace = []
-        ball1_color = RED
-        ball2_color = BLUE
-        ball1_size = 50
-        ball2_size = 50
+        ball1_color = BLUE
+        ball2_color = YELLOW
+        ball1_size = 40
+        ball2_size = 40
 
         # Game duration in seconds
         game_duration = 20
@@ -457,13 +457,13 @@ class GUI:
             if not game_started:
                 font = pygame.font.SysFont(None, 80)
                 if not self.imready:
-                    text = font.render("CLICK TO GET READY", True, YELLOW)
+                    text = font.render("CLICK TO GET READY", True, RED)
                     screen.blit(text, (width // 2 - text.get_width() // 2, height // 2 - text.get_height() // 2))
 
                 if pygame.mouse.get_pressed()[0]:
                     self.imready = True
                     pygame.draw.rect(screen, BLACK, (width // 2 - 400, height // 2 - 400, 800, 800))
-                    text = font.render(f"YOU (PLAYER{player}) ARE READY", True, YELLOW)
+                    text = font.render(f"YOU (PLAYER{player}) ARE READY", True, RED)
                     screen.blit(text, (width // 2 - text.get_width() // 2, height // 2 - text.get_height() // 2))
                     # self.my_msg = "game_ready"
                     mysend(self.socket, json.dumps({"action":"gaming", "from":"[" + self.name + "]", 
