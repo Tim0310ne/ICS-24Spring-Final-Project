@@ -138,65 +138,65 @@ class GUI:
           
         self.please.place(relheight = 0.17,
                        relx = 0.3, 
-                       rely = 0.07)
+                       rely = 0.06)
         # create a Label
         self.labelName = Label(self.reset_password,
-                               text = "Name: ",
-                               font = "Helvetica 20")
+                               text = "Name:",
+                               font = "Chalkboard 18")
           
-        self.labelName.place(relheight = 0.2,
-                             relx = 0.2, 
-                             rely = 0.25, anchor='center')
+        self.labelName.place(relheight = 0.3,
+                             relx = 0.22, 
+                             rely = 0.27, anchor='center')
           
         # create a entry box for 
         # tyoing the message
         self.entryResetName = Entry(self.reset_password, 
-                             font = "Helvetica 20")
+                             font = "Chalkboard 18")
           
-        self.entryResetName.place(relwidth = 0.4, 
-                             relheight = 0.10,
-                             relx = 0.3,
-                             rely = 0.2)
+        self.entryResetName.place(relwidth = 0.42, 
+                             relheight = 0.12,
+                             relx = 0.4,
+                             rely = 0.25)
           
         # set the focus of the curser
         self.entryName.focus()
 
         # create a Label
         self.label_old_Pw = Label(self.reset_password,
-                               text = "Old Password: ",
-                               font = "Helvetica 20")
+                               text = "Old password: ",
+                               font = "Chalkboard 18")
           
-        self.label_old_Pw.place(relheight = 0.2,
-                             relx = 0.16, 
-                             rely = 0.4, anchor='center')
+        self.label_old_Pw.place(relheight = 0.22,
+                             relx = 0.18, 
+                             rely = 0.42, anchor='center')
           
         # create a entry box for 
         # tyoing the message
         self.entry_old_Pw = Entry(self.reset_password, 
-                             font = "Helvetica 20")
+                             font = "Chalkboard 18")
           
-        self.entry_old_Pw.place(relwidth = 0.4, 
-                             relheight = 0.10,
-                             relx = 0.3,
-                             rely = 0.35)
+        self.entry_old_Pw.place(relwidth = 0.42, 
+                             relheight = 0.12,
+                             relx = 0.35,
+                             rely = 0.38)
         
 
         self.label_new_Pw = Label(self.reset_password,
-                               text = "New Password: ",
-                               font = "Helvetica 20")
+                               text = "New password: ",
+                               font = "Chalkboard 18")
           
-        self.label_new_Pw.place(relheight = 0.2,
+        self.label_new_Pw.place(relheight = 0.22,
                              relx = 0.16, 
                              rely = 0.55, anchor='center')
           
         # create a entry box for 
         # tyoing the message
         self.entry_new_Pw = Entry(self.reset_password, 
-                             font = "Helvetica 20")
+                             font = "Helvetica 18")
           
-        self.entry_new_Pw.place(relwidth = 0.4, 
-                             relheight = 0.10,
-                             relx = 0.3,
+        self.entry_new_Pw.place(relwidth = 0.42, 
+                             relheight = 0.12,
+                             relx = 0.35,
                              rely = 0.5)
 
           
