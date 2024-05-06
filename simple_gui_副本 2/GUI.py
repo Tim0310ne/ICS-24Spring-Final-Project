@@ -286,31 +286,31 @@ class GUI:
         self.Window.title("CHATROOM")
         self.Window.resizable(width = False,
                               height = False)
-        self.Window.configure(width = 470,
-                              height = 555,
-                              bg = "#17202A")
+        self.Window.configure(width = 475,
+                              height = 550,
+                              bg = "#1C2833")
         self.labelHead = Label(self.Window,
-                             bg = "#17202A", 
-                              fg = "#EAECEE",
+                             bg = "#1C2833", 
+                              fg = "#F2F3F4",
                               text = self.name ,
-                               font = "Helvetica 13 bold",
+                               font = "Chalkboard 14 bold",
                                pady = 5)
           
         self.labelHead.place(relwidth = 1)
         self.line = Label(self.Window,
-                          width = 450,
-                          bg = "#ABB2B9")
+                          width = 455,
+                          bg = "#B0B7C3")
           
         self.line.place(relwidth = 1,
                         y = 0.07 * 550,
                         height = 0.012 * 550)
           
         self.textCons = Text(self.Window,
-                             width = 20, 
+                             width = 18, 
                              height = 2,
                              bg = "#17202A",
-                             fg = "#EAECEE",
-                             font = "Helvetica 14", 
+                             fg = "#F2F3F4",
+                             font = "Chalkboard 14", 
                              padx = 5,
                              pady = 5)
           
@@ -319,7 +319,7 @@ class GUI:
                             y = 0.08 * 550)
           
         self.labelBottom = Label(self.Window,
-                                 bg = "#ABB2B9",
+                                 bg = "#B0B7C3",
                                  height = 80)
           
         self.labelBottom.place(relwidth = 1,
@@ -327,8 +327,8 @@ class GUI:
           
         self.entryMsg = Entry(self.labelBottom,
                               bg = "#2C3E50",
-                              fg = "#EAECEE",
-                              font = "Helvetica 13")
+                              fg = "#F2F3F4",
+                              font = "Chalkboard 13")
           
         # place the given widget
         # into the gui window
@@ -342,9 +342,9 @@ class GUI:
         # create a Send Button
         self.buttonMsg = Button(self.labelBottom,
                                 text = "Send",
-                                font = "Helvetica 10 bold", 
-                                width = 20,
-                                bg = "#ABB2B9",
+                                font = "Chalkboard 10 bold", 
+                                width = 18,
+                                bg = "#B0B7C3",
                                 command = lambda : self.sendButton(self.entryMsg.get()))
           
         self.buttonMsg.place(relx = 0.77,
@@ -353,10 +353,10 @@ class GUI:
                              relwidth = 0.22)
         
         self.buttonG = Button(self.Window,
-                             text = "Game with peer!!!",
+                             text = "Game with peer!!",
                              font="Helvetica 10 bold",
-                             width=20,
-                             bg="#ABB2B9",
+                             width=18,
+                             bg="#B0B7C3",
                              command = self.start_game)
         self.buttonG.place(relx=0.01,
                               y= 520,
@@ -365,8 +365,8 @@ class GUI:
         self.buttonB = Button(self.Window,
                              text = "Quit group",
                              font="Helvetica 10 bold",
-                             width=20,
-                             bg="#ABB2B9",
+                             width=18,
+                             bg="#B0B7C3",
                              command = self.quit)
         self.buttonB.place(relx=0.51,
                               y= 520,
@@ -381,7 +381,7 @@ class GUI:
           
         # place the scroll bar 
         # into the gui window
-        scrollbar.place(height = 550,
+        scrollbar.place(height = 555,
                         relx = 0.974)
           
         scrollbar.config(command = self.textCons.yview)
@@ -485,19 +485,19 @@ class GUI:
                 if current_time <= game_duration:
                     keys = pygame.key.get_pressed()
 
-                    # Player 1 controls (Red)
+                    # Player 1 controls (Blue)
                     if player == 1:
                         if keys[pygame.K_a]:
-                            self.x1 -= 5
+                            self.x1 -= 4
                             self.x1 %= 800
                         if keys[pygame.K_d]:
-                            self.x1 += 5
+                            self.x1 += 4
                             self.x1 %= 800
                         if keys[pygame.K_w]:
-                            self.y1 -= 5
+                            self.y1 -= 4
                             self.y1 %= 600
                         if keys[pygame.K_s]:
-                            self.y1 += 5
+                            self.y1 += 4
                             self.y1 %= 600
                         mysend(self.socket, json.dumps({"action":"gaming", "from":"[" + self.name + "]", 
                                                         'operation':'moving','coordinate':f"{self.x1},{self.y1}"}))
@@ -506,19 +506,19 @@ class GUI:
 
 
 
-                    # Player 2 controls (Blue)
+                    # Player 2 controls (Yellow)
                     else:
                         if keys[pygame.K_a]:
-                            self.x2 -= 5
+                            self.x2 -= 4
                             self.x2 %= 800
                         if keys[pygame.K_d]:
-                            self.x2 += 5
+                            self.x2 += 4
                             self.x2 %= 800
                         if keys[pygame.K_w]:
-                            self.y2 -= 5
+                            self.y2 -= 4
                             self.y2 %= 600
                         if keys[pygame.K_s]:
-                            self.y2 += 5
+                            self.y2 += 4
                             self.y2 %= 600
                         mysend(self.socket, json.dumps({"action":"gaming", 'operation':"moving",
                                                         "from":"[" + self.name + "]", 'coordinate':f"{self.x2},{self.y2}"}))
@@ -526,13 +526,13 @@ class GUI:
 
 
                     # Add ball positions to traces with respective colors and timestamps
-                    ball1_trace.append((self.x1, self.y1, RED, pygame.time.get_ticks()))
-                    ball2_trace.append((self.x2, self.y2, BLUE, pygame.time.get_ticks()))
+                    ball1_trace.append((self.x1, self.y1, BLUE, pygame.time.get_ticks()))
+                    ball2_trace.append((self.x2, self.y2, YELLOW, pygame.time.get_ticks()))
 
                     # Draw ball traces with colors
                     all_traces = sorted(ball1_trace + ball2_trace, key=lambda x: x[3])
                     for pos in all_traces:
-                        pygame.draw.circle(screen, pos[2], (pos[0], pos[1]), ball1_size if pos[2] == RED else ball2_size)
+                        pygame.draw.circle(screen, pos[2], (pos[0], pos[1]), ball1_size if pos[2] == BLUE else ball2_size)
                     
                 else:
                     time.sleep(10)
@@ -549,19 +549,19 @@ class GUI:
                         c += 1
                         if c % 10 == 0:
                             for pixel in i:
-                                if (pixel == RED).all():
+                                if (pixel == BLUE).all():
                                     total_area_player1 += 1
-                                elif (pixel == BLUE).all():
+                                elif (pixel == YELLOW).all():
                                     total_area_player2 += 1
                     # total_area_player1 = sum([ball1_size ** 2 for _ in ball1_trace])
                     # total_area_player2 = sum([ball2_size ** 2 for _ in ball2_trace])
 
                     # Determine the winner based on the total painted area
                     
-                    red_ratio = int(total_area_player1*100/(total_area_player1 + total_area_player2))
-                    blue_ratio = 100 - red_ratio
-                    self.winner = "Player 1 (Red)" if red_ratio > blue_ratio else "Player 2 (Blue)" if red_ratio < blue_ratio else "It's a tie!"
-                    text = font.render(f"Winner: {self.winner}  {red_ratio}:{blue_ratio}", True, WHITE)
+                    blue_ratio = int(total_area_player1*100/(total_area_player1 + total_area_player2))
+                    yellow_ratio = 100 - blue_ratio
+                    self.winner = "Player 1 (Blue)" if blue_ratio > yellow_ratio else "Player 2 (Yellow)" if blue_ratio < yellow_ratio else "It's a tie!"
+                    text = font.render(f"Winner: {self.winner}  {blue_ratio}:{yellow_ratio}", True, WHITE)
                     screen.blit(text, (width // 2 - text.get_width() // 2, height // 2 - text.get_height() // 2))
                     pygame.display.flip()
                     self.textCons.config(state = NORMAL)
